@@ -46,18 +46,15 @@
 * 4. given a product and within expired date, when time goes by, then Quality will never be less than 0.
 * 5. given an expired product for a long term, when time still goes by, then Quality will never be less than 0.
 
-
 * 6. given an on-date Aged Brie, when time go by, then Quality should increase 1 point per day.
 * 7. given an expired Aged Brie, when time go by, then Quality should increase 2 points per day.
 * 8. given an Aged Brie and expired for a long term, when time still goes by, then Quality will never be greater than 50.
 
-
 * 9. given a Sulfuras, when days go by, then Quality should never change.
-* 10. given a Sulfuras, when days go by, then show SellIn is undefined.
 
-*given a Backstage Pass and before 10 days ahead of the performance, when times goes by, then Quality should decrease 1 point per day.
-*given a Backstage Pass and during 10 to 5 days ahead of the performance, when times goes by, then Quality should decrease 2 points per day.
-*given a Backstage Pass and during 5 to 0 days ahead of the performance, when times goes by, then Quality should decrease 3 points per day.
+*given a Backstage Pass and before 10 days ahead of the performance, when times goes by, then Quality should increase 1 point per day.
+*given a Backstage Pass and during 10 to 5 days ahead of the performance, when times goes by, then Quality should increase 2 points per day.
+*given a Backstage Pass and during 5 to 0 days ahead of the performance, when times goes by, then Quality should increase 3 points per day.
 *given a Backstage Pass and as soon as the performance has performed, when times goes by, then Quality should become 0.
 
 

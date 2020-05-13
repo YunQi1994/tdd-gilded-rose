@@ -17,10 +17,9 @@ public class AgedBrieProduct extends Product {
         if (SellIn < days) {
             Quality += SellIn;
             Quality = Math.min(50, Quality + 3 * (days - SellIn));
-        }
-        else {
-            Quality += days;
-            SellIn -= SellIn;
+        } else {
+            Quality = Math.min(50, Quality + days);
+            SellIn -= days;
         }
     }
 }

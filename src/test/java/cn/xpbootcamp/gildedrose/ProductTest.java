@@ -69,4 +69,21 @@ public class ProductTest {
 
         assertThat(product.getQuality()).isEqualTo(50);
     }
+
+    @Test
+    public void should_quality_never_will_change_given_a_Sulfuras_when_time_goes_by() {
+        Product product = new LegendProduct(10);
+        product.timeGoesBy(5);
+
+        assertThat(product.getQuality()).isEqualTo(10);
+    }
+
+    @Test
+    public void should_quality_increase_by_1_per_day_given_a_Backstage_Pass_and_before_10_days_ahead_of_the_performance_when_time_goes_by() {
+        Product product = new PassProduct(15,10);
+        product.timeGoesBy(5);
+
+        assertThat(product.getQuality()).isEqualTo(15);
+    }
+
 }
