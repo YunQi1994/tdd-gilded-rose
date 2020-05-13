@@ -8,11 +8,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AgedBrieProduct extends Product {
+
     private int SellIn;
     private int Quality;
 
     @Override
     public void timeGoesBy(int days) {
-        Quality += days;
+        if (SellIn < days) {
+            Quality += SellIn;
+            Quality += 3 * (days - SellIn);
+        }
+        else {
+            Quality += days;
+            SellIn -= SellIn;
+        }
     }
 }

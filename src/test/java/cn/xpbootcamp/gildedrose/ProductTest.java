@@ -53,4 +53,12 @@ public class ProductTest {
 
         assertThat(product.getQuality()).isEqualTo(15);
     }
+
+    @Test
+    public void should_quality_increase_by_3_points_per_day_given_an_expired_Aged_Brie_when_time_goes_by() {
+        Product product = new AgedBrieProduct(5, 10);
+        product.timeGoesBy(10);
+
+        assertThat(product.getQuality()).isEqualTo(30);
+    }
 }
