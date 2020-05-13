@@ -4,7 +4,6 @@ import lombok.*;
 
 @AllArgsConstructor
 @Getter
-@Setter
 public class Product {
 
     private int SellIn;
@@ -12,11 +11,12 @@ public class Product {
 
     public void timeGoesBy(int days) {
         if (SellIn < days){
-            Quality =- SellIn;
-            Quality -= 2 * (days-SellIn);
+            Quality -= SellIn;
+            Quality = Math.max(Quality - 2 * (days-SellIn), 0);
         }else {
             SellIn -= days;
-            Quality -= days;
+            Quality = Math.max(Quality - days, 0);
+
         }
     }
 

@@ -18,7 +18,7 @@ public class ProductTest {
     }
 
     @Test
-    public void should_quality_decrease_by_1_per_day_given_a_normal_product_within_expired_date_when_when_time_goes_by() {
+    public void should_quality_decrease_by_1_per_day_given_a_normal_product_within_expired_date_when_time_goes_by() {
         Product product = new Product(10, 10);
         product.timeGoesBy(5);
 
@@ -26,12 +26,26 @@ public class ProductTest {
     }
 
     @Test
-    public void should_quality_decrease_by_2_per_day_given_a_normal_product_and_being_expired_when_when_time_goes_by() {
+    public void should_quality_decrease_by_2_per_day_given_a_normal_product_and_being_expired_when_time_goes_by() {
         Product product = new Product(1, 10);
         product.timeGoesBy(3);
 
         assertThat(product.getQuality()).isEqualTo(5);
     }
 
+    @Test
+    public void should_quality_will_never_be_less_than_0_given_a_normal_product_within_expired_date__when_time_goes_by() {
+        Product product = new Product(10, 5);
+        product.timeGoesBy(6);
 
+        assertThat(product.getQuality()).isEqualTo(0);
+    }
+
+    @Test
+    public void should_quality_will_never_be_less_than_0_given_an_expired_product_for_a_long_term_when_time_goes_by() {
+        Product product = new Product(1, 10);
+        product.timeGoesBy(10);
+
+        assertThat(product.getQuality()).isEqualTo(0);
+    }
 }
