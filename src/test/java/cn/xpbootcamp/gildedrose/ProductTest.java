@@ -61,4 +61,12 @@ public class ProductTest {
 
         assertThat(product.getQuality()).isEqualTo(30);
     }
+
+    @Test
+    public void should_quality_never_will_be_greater_than_50_given_an_Aged_Brie_expired_for_a_long_term_when_time_goes_by() {
+        Product product = new AgedBrieProduct(1, 10);
+        product.timeGoesBy(21);
+
+        assertThat(product.getQuality()).isEqualTo(50);
+    }
 }

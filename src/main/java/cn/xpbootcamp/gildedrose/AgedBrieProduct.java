@@ -16,7 +16,7 @@ public class AgedBrieProduct extends Product {
     public void timeGoesBy(int days) {
         if (SellIn < days) {
             Quality += SellIn;
-            Quality += 3 * (days - SellIn);
+            Quality = Math.min(50, Quality + 3 * (days - SellIn));
         }
         else {
             Quality += days;
