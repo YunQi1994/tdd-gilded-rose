@@ -1,7 +1,7 @@
 package cn.xpbootcamp.gildedrose;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,36 +10,21 @@ public class ProductTest {
     private String name;
 
     @Test
-    public void should_return_product_info_given_a_product_is_created_when_check_product_info() {
-        Product product = new Product( 20, 10);
-        assertThat(product.getQuality()).isEqualTo(10);
-        assertThat(product.getSellIn()).isEqualTo(20);
+    public void should_decrease_day_by_day_given_a_product_when_time_goes_by() {
+        Product product = new Product(10, 10);
+        product.timeGoesBy(5);
+        int actual = product.getSellIn();
+        Assert.assertEquals(5, product.getSellIn());
     }
 
     @Test
-    public void should_decrease_SellIn_by_1_given_a_on_date_product_when_has_existed_1_day() {
-        Product product= new Product(20,10);
-        product.travelOneDay();
+    public void should_quality_decrease_by_1_per_day_given_a_normal_product_within_expired_date_when_when_time_goes_by() {
+        Product product = new Product(10, 10);
+        product.timeGoesBy(5);
 
-        assertThat(product.getQuality()).isEqualTo(9);
-        assertThat(product.getSellIn()).isEqualTo(19);
+        assertThat(product.getQuality()).isEqualTo(5);
+        assertThat(product.getSellIn()).isEqualTo(5);
     }
 
-    @Test
-    public void should_decrease_SellIn_by_5_given_a_on_date_product_when_travel (){
-        Product product = new Product(20, 10);
-        product.travel(1);
-
-        assertThat(product.getSellIn()).isEqualTo(19);
-        assertThat(product.getQuality()).isEqualTo(9);
-    }
-
-//    @Test
-//    public void should_decrease_by_2_points_given_a_out_of_date_product_when_travel (){
-//        Product product = new Product(1, 20);
-//        product.travel(1);
-//        assertThat(product.getQuality()).isEqualTo(17);
-//
-//    }
 
 }
