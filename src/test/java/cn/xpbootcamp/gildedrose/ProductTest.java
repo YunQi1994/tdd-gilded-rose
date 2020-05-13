@@ -24,12 +24,12 @@ public class ProductTest {
 
     @Test
     public void should_decrease_SellIn_by_5_given_a_normal_on_date_product_when_has_existed_5_days() {
-        Product normalProduct = new Product(name, 20,10);
-        TimeMachine timeMachine = new TimeMachine(normalProduct);
-        Product traveledProduct = timeMachine.productTimeTravel(5);
-        assertThat(traveledProduct.getQuality()).isEqualTo(10);
-        assertThat(traveledProduct.getSellIn()).isEqualTo(20);
-        assertThat(traveledProduct.getName()).isEqualTo("Iron Sword");
+        Product product= new Product(name, 20,10);
+        product.travelOneDay();
+
+        assertThat(product.getQuality()).isEqualTo(9);
+        assertThat(product.getSellIn()).isEqualTo(19);
+        assertThat(product.getName()).isEqualTo("Iron Sword");
     }
 
 }

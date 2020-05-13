@@ -14,4 +14,8 @@ public class Product {
     @NonNull private int sellIn;
     @NonNull private int quality;
 
+    public void travelOneDay() {
+        sellIn--;
+        quality--;
+    }
 }
