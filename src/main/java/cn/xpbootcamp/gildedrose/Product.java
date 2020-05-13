@@ -1,23 +1,15 @@
 package cn.xpbootcamp.gildedrose;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-@AllArgsConstructor
+@Setter
 @Getter
-public class Product {
+public abstract class Product {
 
     private int SellIn;
     private int Quality;
 
-    public void timeGoesBy(int days) {
-        if (SellIn < days){
-            Quality -= SellIn;
-            Quality = Math.max(Quality - 2 * (days-SellIn), 0);
-        }else {
-            SellIn -= days;
-            Quality = Math.max(Quality - days, 0);
-
-        }
-    }
+    public abstract void timeGoesBy(int days);
 
 }
