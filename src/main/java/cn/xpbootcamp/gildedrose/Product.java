@@ -11,7 +11,13 @@ public class Product {
     private int Quality;
 
     public void timeGoesBy(int days) {
-        SellIn -= days;
-        Quality -= days;
+        if (SellIn < days){
+            Quality =- SellIn;
+            Quality -= 2 * (days-SellIn);
+        }else {
+            SellIn -= days;
+            Quality -= days;
+        }
     }
+
 }

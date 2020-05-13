@@ -40,20 +40,20 @@
 * given a store owner using WOW product system, when create a product in system, then create with a name, origin SellIn and origin Quality.
 * given a product defined with SellIn and Quality in system, when check product info, then should show its SellIn and Quality info.
 
-* given a product, when time goes by, then its SellIn date should decrease day by day.
-* given a normal product and within expired date, when time goes by, then its Quality should decrease by 1 point per day.
-* given a normal product and being out-of-date, when time goes by, then its Quality should start to decrease by 2 points per day.
-* given a product and within expired date, when time goes by, then Quality will never be less than 0.
-* given an expired product for a long term, when time still goes by, then Quality will never be less than 0.
+* 1. given a product, when time goes by, then its SellIn date should decrease day by day.
+* 2. given a normal product and within expired date, when time goes by, then its Quality should decrease by 1 point per day.
+* 3. given a normal product and being expired, when time goes by, then its Quality should start to decrease by 2 points per day.
+* 4. given a product and within expired date, when time goes by, then Quality will never be less than 0.
+* 5. given an expired product for a long term, when time still goes by, then Quality will never be less than 0.
 
 
-* given an on-date Aged Brie, when time go by, then Quality should increase 1 point per day.
-* given an expired Aged Brie, when time go by, then Quality should increase 2 points per day.
-* given an Aged Brie and expired for a long term, when time still goes by, then Quality will never be greater than 50.
+* 6. given an on-date Aged Brie, when time go by, then Quality should increase 1 point per day.
+* 7. given an expired Aged Brie, when time go by, then Quality should increase 2 points per day.
+* 8. given an Aged Brie and expired for a long term, when time still goes by, then Quality will never be greater than 50.
 
 
-* given a Sulfuras, when days go by, then Quality should never change.
-* given a Sulfuras, when days go by, then show SellIn is undefined.
+* 9. given a Sulfuras, when days go by, then Quality should never change.
+* 10. given a Sulfuras, when days go by, then show SellIn is undefined.
 
 *given a Backstage Pass and before 10 days ahead of the performance, when times goes by, then Quality should decrease 1 point per day.
 *given a Backstage Pass and during 10 to 5 days ahead of the performance, when times goes by, then Quality should decrease 2 points per day.

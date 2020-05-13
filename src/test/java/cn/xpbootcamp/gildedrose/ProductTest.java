@@ -23,7 +23,14 @@ public class ProductTest {
         product.timeGoesBy(5);
 
         assertThat(product.getQuality()).isEqualTo(5);
-        assertThat(product.getSellIn()).isEqualTo(5);
+    }
+
+    @Test
+    public void should_quality_decrease_by_2_per_day_given_a_normal_product_and_being_expired_when_when_time_goes_by() {
+        Product product = new Product(1, 10);
+        product.timeGoesBy(3);
+
+        assertThat(product.getQuality()).isEqualTo(5);
     }
 
 
