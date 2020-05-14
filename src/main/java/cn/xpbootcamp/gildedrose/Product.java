@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 public abstract class Product {
 
-    private int SellIn;
-    private int Quality;
+    int SellIn;
+    int Quality;
 
     public abstract void timeGoesBy(int days);
 

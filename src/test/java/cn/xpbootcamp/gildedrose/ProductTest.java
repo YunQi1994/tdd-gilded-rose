@@ -86,4 +86,28 @@ public class ProductTest {
         assertThat(product.getQuality()).isEqualTo(15);
     }
 
+    @Test
+    public void should_quality_become_0_given_a_Backstage_Pass_and_performance_day_has_past_when_time_goes_by() {
+        Product product = new PassProduct(1,50);
+        product.timeGoesBy(2);
+
+        assertThat(product.getQuality()).isEqualTo(0);
+    }
+
+    @Test
+    public void should_quality_increase_2_points_per_day_given_a_Backstage_Pass_and_during_10_to_5_days_ahead_of_the_performance_when_time_goes_by() {
+        Product product = new PassProduct(15,10);
+        product.timeGoesBy(10);
+
+        assertThat(product.getQuality()).isEqualTo(25);
+    }
+
+    @Test
+    public void should_quality_increase_3_points_per_day_given_a_Backstage_Pass_and_during_5_to_0_days_ahead_of_the_performance_when_time_goes_by() {
+        Product product = new PassProduct(15,10);
+        product.timeGoesBy(10);
+
+        assertThat(product.getQuality()).isEqualTo(25);
+    }
+
 }

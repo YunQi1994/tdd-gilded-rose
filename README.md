@@ -55,7 +55,7 @@
 *given a Backstage Pass and before 10 days ahead of the performance, when times goes by, then Quality should increase 1 point per day.
 *given a Backstage Pass and during 10 to 5 days ahead of the performance, when times goes by, then Quality should increase 2 points per day.
 *given a Backstage Pass and during 5 to 0 days ahead of the performance, when times goes by, then Quality should increase 3 points per day.
-*given a Backstage Pass and as soon as the performance has performed, when times goes by, then Quality should become 0.
+*given a Backstage Pass and as soon as the performance day has past, when times goes by, then Quality should become 0.
 
 
 
