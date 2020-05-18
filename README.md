@@ -35,27 +35,32 @@
 
 ## Tasking
 
-### assume: system starts from day 0:
+* 1. given a product with SellIn 5, when one day past, then its SellIn should decrease to 4.
+* 2. given a normal product with SellIn 5 and Quality 10, when one day past, then its Quality should decrease to 9.
+* 3. given a normal product with SellIn 0 and Quality 10, when one day past, then its Quality should decrease to 8.
+* 4. given a normal product with SellIn 5 and Quality 0, when one day past, then Quality should still be 0.
+* 5. given a normal product with SellIn 0 and Quality 0, when oen day past, then Quality should still be 0.
 
-* given a store owner using WOW product system, when create a product in system, then create with a name, origin SellIn and origin Quality.
-* given a product defined with SellIn and Quality in system, when check product info, then should show its SellIn and Quality info.
+* 6. given an Aged Brie with SellIn 5 and Quality 10, when one day past, then Quality should increase to 11.
+* 7. given an expired Aged Brie with SellIn 0 and Quality 10, when one day past, then Quality should increase to 12.
+* 8. given an Aged Brie with SellIn 5 and Quality 50, when one day past, then Quality will still be 50.
+* 8. given an Aged Brie with SellIn 0 and Quality 49, when one day past, then Quality will increase to 50.
 
-* 1. given a product, when time goes by, then its SellIn date should decrease day by day.
-* 2. given a normal product and within expired date, when time goes by, then its Quality should decrease by 1 point per day.
-* 3. given a normal product and being expired, when time goes by, then its Quality should start to decrease by 2 points per day.
-* 4. given a product and within expired date, when time goes by, then Quality will never be less than 0.
-* 5. given an expired product for a long term, when time still goes by, then Quality will never be less than 0.
+* 9. given a Sulfuras with Quality 10, when one day past, then Quality will still be 10.
 
-* 6. given an on-date Aged Brie, when time go by, then Quality should increase 1 point per day.
-* 7. given an expired Aged Brie, when time go by, then Quality should increase 2 points per day.
-* 8. given an Aged Brie and expired for a long term, when time still goes by, then Quality will never be greater than 50.
+* 10. given a Backstage Pass with SellIn 11 and Quality 10, when one day past, then Quality should increase to 11.
+* 11. given a Backstage Pass and SellIn 11 and Quality 50, when one day past, then Quality will still be 50.
+* 12. given a Backstage Pass and SellIn 10 and Quality 10, when one day past, then Quality will increase to 12.
+* 13. given a Backstage Pass and SellIn 10 and Quality 49, when one day past, then Quality will increase to 50.
+* 14. given a Backstage Pass and SellIn 5 and Quality 10, when one day past, then Quality will increase to 13.
+* 15. given a Backstage Pass and SellIn 5 and Quality 49, when one day past, then Quality will increase to 50.
+* 16. given a Backstage Pass and SellIn 1 and Quality 50, when one day past, then Quality will still be 50.
+* 17. given a Backstage Pass and SellIn 0 and Quality 10, when one day past, then Quality will decrease to 0.
 
-* 9. given a Sulfuras, when days go by, then Quality should never change.
 
-*given a Backstage Pass and before 10 days ahead of the performance, when times goes by, then Quality should increase 1 point per day.
-*given a Backstage Pass and during 10 to 5 days ahead of the performance, when times goes by, then Quality should increase 2 points per day.
-*given a Backstage Pass and during 5 to 0 days ahead of the performance, when times goes by, then Quality should increase 3 points per day.
-*given a Backstage Pass and as soon as the performance day has past, when times goes by, then Quality should become 0.
+
+
+
 
 
 
