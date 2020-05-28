@@ -2,18 +2,15 @@ package cn.xpbootcamp.gildedrose;
 
 public class NormalProduct extends Product {
 
-    public NormalProduct(int sellIn, int quality) {
-        super(sellIn, quality);
+    public NormalProduct(String name, int quality, int sellIn) {
+        super(name, quality, sellIn);
     }
 
     @Override
-    public void oneDayPast(){
-        decreaseSellIn();
+    public void updateQuality() {
         decreaseQuality();
         if (isExpired()){
             decreaseQuality();
         }
     }
-
-
 }

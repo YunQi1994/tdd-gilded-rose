@@ -1,29 +1,24 @@
 package cn.xpbootcamp.gildedrose;
 
 public class BackstagePass extends Product {
-    public BackstagePass(int sellIn, int quality) {
-        super(sellIn, quality);
+
+    public BackstagePass(String name, int quality, int sellIn) {
+        super(name, quality, sellIn);
     }
 
     @Override
-    public void oneDayPast() {
-        decreaseSellIn();
+    public void updateQuality() {
         if (isExpired()) {
-            decreaseQuality();
+            reSetQuality();
             return;
         }
         increaseQuality();
-        if (sellIn < 10) {
+        if (this.getSellIn() < 10) {
             increaseQuality();
         }
-        if (sellIn < 5) {
+        if (this.getSellIn() < 5) {
             increaseQuality();
         }
-    }
-
-    @Override
-    protected void decreaseQuality() {
-        quality = 0;
     }
 
 }

@@ -1,13 +1,13 @@
 package cn.xpbootcamp.gildedrose;
 
 public class AgedBrie extends Product {
-    public AgedBrie(int sellIn, int quality) {
-        super(sellIn, quality);
+
+    public AgedBrie(String name, int quality, int sellIn) {
+        super(name, quality, sellIn);
     }
 
     @Override
-    public void oneDayPast() {
-        decreaseSellIn();
+    public void updateQuality() {
         increaseQuality();
         if (isExpired()){
             increaseQuality();

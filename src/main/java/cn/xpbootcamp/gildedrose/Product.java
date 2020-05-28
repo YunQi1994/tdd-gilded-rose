@@ -1,22 +1,22 @@
 package cn.xpbootcamp.gildedrose;
 
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
 @Getter
 public abstract class Product {
 
-    protected int sellIn;
-    protected int quality;
+    private int sellIn;
+    private int quality;
+    private String name;
 
-    public Product(int sellIn, int quality) {
+    public Product(String name, int quality, int sellIn) {
+        this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
 
-    public Product(int quality){
-        this.quality = quality;
+    protected void reSetQuality(){
+        this.quality = 0;
     }
 
     protected void decreaseQuality() {
@@ -31,7 +31,7 @@ public abstract class Product {
         }
     }
 
-    protected void decreaseSellIn() {
+    protected void updateSellIn() {
         sellIn--;
     }
 
@@ -39,5 +39,9 @@ public abstract class Product {
         return sellIn < 0;
     }
 
-    public abstract void oneDayPast();
+    public abstract void updateQuality();
+    protected void updateProduct(){
+        updateSellIn();
+        updateQuality();
+    };
 }
